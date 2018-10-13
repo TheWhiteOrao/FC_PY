@@ -14,26 +14,34 @@ time.sleep(1)
 
 while (True):
 
-    led.setColor('Green')
-    print("LED is green")
-    time.sleep(0.1)
-
-    led.setColor('Cyan')
-    print("LED is cyan")
-    time.sleep(0.1)
-
-    led.setColor('Blue')
-    print("LED is blue")
-    time.sleep(0.1)
-
-    led.setColor('Magenta')
-    print("LED is magenta")
-    time.sleep(0.1)
+    led.setColor('Black')
+    print("LED is Black")
+    time.sleep(0.05)
 
     led.setColor('Red')
-    print("LED is red")
-    time.sleep(0.1)
+    print("LED is Red")
+    time.sleep(0.05)
+
+    led.setColor('Green')
+    print("LED is Green")
+    time.sleep(0.05)
+
+    led.setColor('Blue')
+    print("LED is Blue")
+    time.sleep(0.05)
+
+    led.setColor('Cyan')
+    print("LED is Cyan")
+    time.sleep(0.05)
+
+    led.setColor('Magenta')
+    print("LED is Magenta")
+    time.sleep(0.05)
 
     led.setColor('Yellow')
-    print("LED is yellow")
-    time.sleep(0.1)
+    print("LED is Yellow")
+    time.sleep(0.05)
+
+    led.setColor('White')
+    print("LED is White")
+    time.sleep(0.05)
