@@ -48,10 +48,10 @@ elif len(sys.argv) == 2:
 args = parser.parse_args()
 
 if args.i == 'mpu':
-    print "Selected: MPU9250"
+    print("Selected: MPU9250")
     imu = navio.mpu9250.MPU9250()
 elif args.i == 'lsm':
-    print "Selected: LSM9DS1"
+    print("Selected: LSM9DS1")
     imu = navio.lsm9ds1.LSM9DS1()
 else:
     print "Wrong sensor name. Select: mpu or lsm"
