@@ -2,6 +2,6 @@ from navio.mpu9250 import *
 from navio.lsm9ds1 import *
 
 print("henllo World")
-lsm = LSM9DS1()
+MPU = MPU9250()
 
-print(lsm.getMotion6())
+print(MPU.getMotion6())
