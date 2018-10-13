@@ -54,12 +54,12 @@ elif args.i == 'lsm':
     print("Selected: LSM9DS1")
     imu = navio.lsm9ds1.LSM9DS1()
 else:
-    print "Wrong sensor name. Select: mpu or lsm"
+    print("Wrong sensor name. Select: mpu or lsm")
     sys.exit(1)
 
 
 if imu.testConnection():
-    print "Connection established: True"
+    print("Connection established: True")
 else:
     sys.exit("Connection established: False")
 
