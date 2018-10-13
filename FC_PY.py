@@ -6,4 +6,6 @@ MPU = MPU9250()
 
 MPU.set_acc_scale(BITS_FS_16G)
 
-p = MPU.getMotion6())
+p = MPU.getMotion6()
+
+print(p)
