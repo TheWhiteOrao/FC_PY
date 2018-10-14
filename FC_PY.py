@@ -6,7 +6,7 @@ from navio.util import *
 import navio.leds
 import navio.util
 
-print("Load START FC_PY")
+print("Start startup from FC_PY")
 
 navio.util.check_apm()
 led = navio.leds.Led()
@@ -14,9 +14,16 @@ led = navio.leds.Led()
 led.setColor('Red')
 
 
-time.sleep(5)
-print("Loadet START FC_PY")
+time.sleep(2)
+print("Startup loaded from FC_PY")
 
+
+count = 0
 while True:
-    led.setColor("Green")
-    led.setColor("Black")
+    if count == 200:
+        led.setColor("Green")
+    elif count == 400:
+        led.setColor("Black")
+        count = 0
+
+    count += 1
