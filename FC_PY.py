@@ -20,9 +20,9 @@ print("Startup loaded from FC_PY")
 
 count = 0
 while True:
-    if count == 200:
+    if count == 20000:
         led.setColor("Green")
-    elif count == 400:
+    elif count == 40000:
         led.setColor("Black")
         count = 0
 
