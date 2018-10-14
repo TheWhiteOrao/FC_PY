@@ -1,12 +1,22 @@
+import sys
+import time
 from navio.mpu9250 import *
 from navio.lsm9ds1 import *
+from navio.util import *
+import navio.leds
+import navio.util
 
-print("henllo World")
-MPU = MPU9250()
-MPU.WriteReg("MPU9250", "SPI")
-MPU.set_acc_scale("BITS_FS_2G")
-a = MPU.read_acc()
-g = MPU.read_gyro()
+print("Load START FC_PY")
+
+navio.util.check_apm()
+led = navio.leds.Led()
+
+led.setColor('Red')
 
 
-print(a, g)
+time.sleep(5)
+print("Loadet START FC_PY")
+
+while True:
+    led.setColor("Green")
+    led.setColor("Black")
