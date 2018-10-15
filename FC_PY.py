@@ -37,6 +37,6 @@ while True:
     gm9 = mup.getMotion9()
     time.sleep(0.01)
 
-    print(gm6, gm9)
-    time.sleep(1)
+    print(gm6[0], gm6[1], gm6[2],  # gm9)
+    time.sleep(0.1)
     count += 1
