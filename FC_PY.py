@@ -34,7 +34,7 @@ while True:
     gm6 = mup.getMotion6()
     time.sleep(0.01)
 
-    gm9 = mpu.getMotion9()
+    gm9 = mup.getMotion9()
     time.sleep(0.01)
 
     print(gm6, gm9)
