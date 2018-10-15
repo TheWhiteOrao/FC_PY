@@ -9,14 +9,19 @@ import navio.util
 print("Start startup from FC_PY")
 
 navio.util.check_apm()
-led = navio.leds.Led()
 
+led = navio.leds.Led()
 led.setColor('Red')
+
+mup = navio.mpu9250.MPU9250()
+mup.initialize()
+
+lsm = navio.lsm9ds1.LSM9DS1()
+lsm.initialize()
 
 
 time.sleep(2)
 print("Startup loaded from FC_PY")
-
 
 count = 0
 while True:
@@ -26,4 +31,11 @@ while True:
         led.setColor("Black")
         count = 0
 
+    gm6 = mup.getMotion6())
+    time.sleep(0.01)
+
+    gm9=mpu.getMotion9())
+    time.sleep(0.01)
+
+    print(gm6, gm9)
     count += 1
