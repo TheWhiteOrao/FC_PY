@@ -13,7 +13,7 @@ modification, are permitted provided that the following conditions are met:
     * Neither the name of the Emlid Limited nor the names of its contributors
     may be used to endorse or promote products derived from this software
     without specific prior written permission.
-    
+
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -292,7 +292,7 @@ class LSM9DS1:
     def read_acc(self):
         # Read accelerometer
         response = self.readRegs(self.__DEVICE_ACC_GYRO, self.__LSM9DS1XG_OUT_X_L_XL, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.accelerometer_data[i] = self.G_SI * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.acc_scale)
 
         self.accelerometer_data = [-self.accelerometer_data[1], -self.accelerometer_data[0], self.accelerometer_data[2]]
@@ -300,7 +300,7 @@ class LSM9DS1:
     def read_gyro(self):
         # Read gyroscope
         response = self.readRegs(self.__DEVICE_ACC_GYRO, self.__LSM9DS1XG_OUT_X_L_G, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.gyroscope_data[i] = (self.PI / 180.0) * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.gyro_scale)
 
         self.gyroscope_data = [-self.gyroscope_data[1], -self.gyroscope_data[0], self.gyroscope_data[2]]
@@ -308,7 +308,7 @@ class LSM9DS1:
     def read_mag(self):
         # Read magnetometer
         response = self.readRegs(self.__DEVICE_MAGNETOMETER, self.__LSM9DS1M_OUT_X_L_M, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.magnetometer_data[i] = 100.0 * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.mag_scale)
 
         self.magnetometer_data[1] *= -1
@@ -326,17 +326,17 @@ class LSM9DS1:
 
         # Read accelerometer
         response = self.readRegs(self.__DEVICE_ACC_GYRO, self.__LSM9DS1XG_OUT_X_L_XL, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.accelerometer_data[i] = self.G_SI * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.acc_scale)
 
         # Read gyroscope
         response = self.readRegs(self.__DEVICE_ACC_GYRO, self.__LSM9DS1XG_OUT_X_L_G, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.gyroscope_data[i] = (self.PI / 180.0) * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.gyro_scale)
 
         # Read magnetometer
         response = self.readRegs(self.__DEVICE_MAGNETOMETER, self.__LSM9DS1M_OUT_X_L_M, 6)
-        for i in xrange(3):
+        for i in range(3):
             self.magnetometer_data[i] = 100.0 * (self.byte_to_float_le(response[2 * i:2 * i + 2]) * self.mag_scale)
 
         # Change rotation of LSM9DS1 like in MPU-9250
