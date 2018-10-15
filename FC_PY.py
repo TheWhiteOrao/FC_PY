@@ -37,9 +37,13 @@ while True:
     gm9 = mup.getMotion9()
     time.sleep(0.01)
 
-    # print(gm9[0], gm9[1], gm9[2])  # gm9)
+    # gm9[0] = accelerometer_data
+    # gm9[1] = gyroscope_data
+    # gm9[2] = magnetometer_data
 
-    print("x: %.6f" % (gm9[1][0]), "y: %.6f" % (gm9[1][1]), "z: %.6f" % (gm9[1][2]))
+    print(("accelerometer_data:" + "x: %.6f" % (gm9[0][0]), "y: %.6f" % (gm9[0][1]), "z: %.6f" % (gm9[0][2])),
+          ("gyroscope_data:" + "x: %.6f" % (gm9[1][0]), "y: %.6f" % (gm9[1][1]), "z: %.6f" % (gm9[1][2])),
+          ("magnetometer_data:" + "x: %.6f" % (gm9[2][0]), "y: %.6f" % (gm9[2][1]), "z: %.6f" % (gm9[2][2])))
 
     time.sleep(0.01)
     count += 1
