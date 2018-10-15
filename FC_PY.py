@@ -37,6 +37,9 @@ while True:
     gm9 = mup.getMotion9()
     time.sleep(0.01)
 
-    print(gm9[0], gm9[1], gm9[2])  # gm9)
+    # print(gm9[0], gm9[1], gm9[2])  # gm9)
+
+    print("x: %.6f" % (gm9[2][0]), "y: %.6f" % (gm9[2][1]), "z: %.6f" % (gm9[2][2]))
+
     time.sleep(0.3)
     count += 1
