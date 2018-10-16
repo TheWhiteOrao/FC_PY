@@ -113,7 +113,7 @@ def update():
 
     # Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
     if (MPU9250_MAG_x == 0.0 and MPU9250_MAG_y == 0.0 and MPU9250_MAG_z == 0.0):
-        updateIMU_MPU9250()
+        print("updateIMU_MPU9250()")
 
     # Compute feedback only if accelerometer measurement valid (avoids NaN in accelerometer normalisation)
     if not (MPU9250_ACC_x == 0.0 and MPU9250_ACC_y == 0.0 MPU9250_ACC_z == 0.0):
