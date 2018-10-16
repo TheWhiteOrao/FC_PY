@@ -130,6 +130,7 @@ def update():
         MPU9250_ACC_z *= recipNorm
 
         # Normalise magnetometer measurement
+        print((MPU9250_MAG_x * MPU9250_MAG_x + MPU9250_MAG_y * MPU9250_MAG_y + MPU9250_MAG_z * MPU9250_MAG_z))
         recipNorm = (MPU9250_MAG_x * MPU9250_MAG_x + MPU9250_MAG_y * MPU9250_MAG_y + MPU9250_MAG_z * MPU9250_MAG_z) ** -0.5
         MPU9250_MAG_x *= recipNorm
         MPU9250_MAG_y *= recipNorm

@@ -16,3 +16,4 @@ def update():
 
 
 update()
+print(-0 ** -0.5)
