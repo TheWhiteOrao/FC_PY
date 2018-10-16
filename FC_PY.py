@@ -17,7 +17,7 @@ check_apm()
 #
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 
-print(It Loads the Startup)
+print("It Loads the Startup")
 led = Led()
 led.setColor('Red')
 
