@@ -118,6 +118,7 @@ def update():
     MPU9250_MAG_z = MPU9250_MAG[2]  # MPU9250 magnetometer_z_data
 
     # Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
+    print(MPU9250_AGM)
     # print(MPU9250_MAG_x,
     #      MPU9250_MAG_y,
     #      MPU9250_MAG_z)
