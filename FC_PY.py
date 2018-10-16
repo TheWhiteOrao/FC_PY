@@ -248,7 +248,8 @@ def updateIMU_MPU9250():
     if not (MPU9250_ACC_x == 0.0 and MPU9250_ACC_y == 0.0 and MPU9250_ACC_z == 0.0):
 
         # Normalise accelerometer measurement
-        recipNorm = invSqrt(MPU9250_ACC_x * MPU9250_ACC_x + MPU9250_ACC_y * MPU9250_ACC_y + MPU9250_ACC_z * MPU9250_ACC_z)
+        print((MPU9250_ACC_x * MPU9250_ACC_x + MPU9250_ACC_y * MPU9250_ACC_y + MPU9250_ACC_z * MPU9250_ACC_z))
+        recipNorm = (MPU9250_ACC_x * MPU9250_ACC_x + MPU9250_ACC_y * MPU9250_ACC_y + MPU9250_ACC_z * MPU9250_ACC_z) ** -0.5
         MPU9250_ACC_x *= recipNorm
         MPU9250_ACC_y *= recipNorm
         MPU9250_ACC_z *= recipNorm
