@@ -299,7 +299,7 @@ def updateIMU_MPU9250():
     q2 += (qa * MPU9250_GYR_y - qb * MPU9250_GYR_z + q3 * MPU9250_GYR_x)
     q3 += (qa * MPU9250_GYR_z + qb * MPU9250_GYR_y - qc * MPU9250_GYR_x)
     # Normalise quaternion
-    recipNorm = invSqrt(q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3)
+    recipNorm = (q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3) ** -0.5
     q0 *= recipNorm
     q1 *= recipNorm
     q2 *= recipNorm
