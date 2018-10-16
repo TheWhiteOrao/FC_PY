@@ -355,5 +355,5 @@ while True:
     update()
     # print(number_of_cycles)
 
-    time.sleep(0.01)
+    time.sleep(0.1)
     number_of_cycles += 1
