@@ -125,8 +125,7 @@ def update():
 
     if (MPU9250_MAG_x == 0.0 and MPU9250_MAG_y == 0.0 and MPU9250_MAG_z == 0.0):
         updateIMU_MPU9250()
-        break
-
+        return()
     # Compute feedback only if accelerometer measurement valid (avoids NaN in accelerometer normalisation)
     if not (MPU9250_ACC_x == 0.0 and MPU9250_ACC_y == 0.0 and MPU9250_ACC_z == 0.0):
 
@@ -316,6 +315,7 @@ def updateIMU_MPU9250():
           MPU9250_GYR_x,
           MPU9250_GYR_y,
           MPU9250_GYR_z)
+
 
     # Get Motion of the sensor LSM9DS1
 LSM9DS1_AGM = LSM9DS1.getMotion9()
