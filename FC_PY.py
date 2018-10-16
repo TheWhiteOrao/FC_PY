@@ -92,6 +92,10 @@ twoKp = 2
 
 
 def update():
+    global q0
+    global q1
+    global q2
+    global q3
     # Get Motion of the sensor MPU9250
     MPU9250_AGM = MPU9250.getMotion9()
 
