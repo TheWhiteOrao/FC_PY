@@ -74,7 +74,7 @@ print("Startup loaded")
 number_of_cycles = 0
 G_SI = 9.80665
 PI = 3.14159
-
+count = 0
 q0 = 1
 q1 = 0
 q2 = 0
