@@ -99,7 +99,7 @@ def update():
     global q2
     global q3
     # Get Motion of the sensor MPU9250
-    MPU9250_AGM = MPU9250.getMotion9()
+    MPU9250_AGM = LSM9DS1.getMotion9()
 
     MPU9250_ACC = MPU9250_AGM[0]  # X:, Y:, Z:, accelerometer_data of MPU9250
     MPU9250_GYR = MPU9250_AGM[1]  # X:, Y:, Z:, gyroscope_data of MPU9250
@@ -227,7 +227,7 @@ def updateIMU_MPU9250():
     global q2
     global q3
     # Get Motion of the sensor MPU9250
-    MPU9250_AGM = MPU9250.getMotion9()
+    MPU9250_AGM = LSM9DS1.getMotion9()
 
     MPU9250_ACC = MPU9250_AGM[0]  # X:, Y:, Z:, accelerometer_data of MPU9250
     MPU9250_GYR = MPU9250_AGM[1]  # X:, Y:, Z:, gyroscope_data of MPU9250
