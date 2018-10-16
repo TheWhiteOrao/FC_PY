@@ -119,6 +119,9 @@ def update():
     MPU9250_MAG_z = MPU9250_MAG[2]  # MPU9250 magnetometer_z_data
 
     # Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
+    print(MPU9250_MAG_x,
+          MPU9250_MAG_y,
+          MPU9250_MAG_z)
     if (MPU9250_MAG_x == 0.0 and MPU9250_MAG_y == 0.0 and MPU9250_MAG_z == 0.0):
         updateIMU_MPU9250()
 
@@ -200,7 +203,7 @@ def update():
     q3 += (qa * MPU9250_GYR_z + qb * MPU9250_GYR_y - qc * MPU9250_GYR_x)
 
     # Normalise quaternion
-    recipNorm = invSqrt(q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3)
+    recipNorm = (q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3) ** -0.5
     q0 *= recipNorm
     q1 *= recipNorm
     q2 *= recipNorm
