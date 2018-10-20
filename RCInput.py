@@ -27,6 +27,5 @@ while (True):
           "CAN_5: %.6f" % float(period_can_5),
           "CAN_6: %.6f" % float(period_can_6),
           "CAN_7: %.6f" % float(period_can_7),
-          "CAN_8: %.6f" % float(period_can_8),
           )
     time.sleep(0.01)
