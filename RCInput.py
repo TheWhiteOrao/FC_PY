@@ -9,6 +9,6 @@ navio.util.check_apm()
 rcin = navio.rcinput.RCInput()
 
 while (True):
-    period = rcin.read(2)
+    period = rcin.read(1)
     print(period)
     time.sleep(0.01)
