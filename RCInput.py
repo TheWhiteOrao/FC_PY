@@ -19,14 +19,14 @@ while (True):
     period_can_7 = rcin.read(7)
     period_can_8 = rcin.read(8)
 
-    print("CAN_0: %.6f" % period_can_0,
-          "CAN_1: %.6f" % period_can_1,
-          "CAN_2: %.6f" % period_can_2,
-          "CAN_3: %.6f" % period_can_3,
-          "CAN_4: %.6f" % period_can_4,
-          "CAN_5: %.6f" % period_can_5,
-          "CAN_6: %.6f" % period_can_6,
-          "CAN_7: %.6f" % period_can_7,
-          "CAN_8: %.6f" % period_can_8,
+    print("CAN_0: %.6f" % float(period_can_0),
+          "CAN_1: %.6f" % float(period_can_1),
+          "CAN_2: %.6f" % float(period_can_2),
+          "CAN_3: %.6f" % float(period_can_3),
+          "CAN_4: %.6f" % float(period_can_4),
+          "CAN_5: %.6f" % float(period_can_5),
+          "CAN_6: %.6f" % float(period_can_6),
+          "CAN_7: %.6f" % float(period_can_7),
+          "CAN_8: %.6f" % float(period_can_8),
           )
     time.sleep(0.01)
