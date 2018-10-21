@@ -142,11 +142,12 @@ motor_rotor_1_y = cos_two(0) * 500
 
 lever_act_origin = radius_of_rotors * force_of_rotors
 lever_act_rotor_1 = motor_rotor_1_x * force_of_rotors
-
+lever_act_rotor_2 = motor_rotor_1_y * force_of_rotors
 
 print(motor_rotor_1_x, "\n",
       motor_rotor_1_y, "\n",
-      lever_act_rotor_1
+      lever_act_rotor_1, "\n",
+      lever_act_rotor_2
       )
 #
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
