@@ -116,12 +116,12 @@ def imuSetup():
         ax, ay, az = gM6_Acc[0], gM6_Acc[1], gM6_Acc[2]
         gx, gy, gz = gM6_Gyr[0], gM6_Gyr[1], gM6_Gyr[2]
 
-        print("ax :  %.6f" % ax,
-              "ay :  %.6f" % ay,
-              "az :  %.6f" % az,
-              "gx :  %.6f" % gx,
-              "gy :  %.6f" % gy,
-              "gz :  %.6f" % gz)
+        print("ax : {0:10}".format(ax),
+              "ay : {0:10}".format(ay),
+              "az : {0:10}".format(az),
+              "gx : {0:10}".format(gx),
+              "gy : {0:10}".format(gy),
+              "gz : {0:10}".format(gz))
 
 
 imuSetup()
