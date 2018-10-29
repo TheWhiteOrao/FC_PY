@@ -112,3 +112,6 @@ def imuSetup():
     for i in range(100):
         x = imu.getMotion6()[0]
         print(x)
+
+
+imuSetup()
