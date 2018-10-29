@@ -110,8 +110,18 @@ def imuSetup():
     print("Beginning Gyro calibration...\n")
 
     for i in range(100):
-        x = imu.getMotion6()[0]
-        print(x)
+        gM6_AccGyr = imu.getMotion6()
+        gM6_Acc = gM6_AccGyr[0]
+        gM6_Gyr = gM6_AccGyr[1]
+        ax, ay, az = gM6_Acc[0], gM6_Acc[1], gM6_Acc[2]
+        gx, gy, gz = gM6_Gyr[0], gM6_Gyr[1], gM6_Gyr[2]
+
+        print("ax :  %.6f" % ax,
+              "ay :  %.6f" % ay,
+              "az :  %.6f" % az,
+              "gx :  %.6f" % gx,
+              "gy :  %.6f" % gy,
+              "gz :  %.6f" % gz)
 
 
 imuSetup()
