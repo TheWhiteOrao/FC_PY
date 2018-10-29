@@ -49,7 +49,6 @@
 #
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 
-from math import *
 from decimal import *
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 #
@@ -63,8 +62,8 @@ from decimal import *
 
 
 radius_of_reaction_wheel = 131.16298    # Millimeter
-radius_of_rotors = 500                  # Millimeter
-force_of_rotors = 1273                  # Newton
+radius_of_rotors = 500        # Millimeter
+force_of_rotors = 10             # Newton
 
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
@@ -119,6 +118,7 @@ def cos_two(y):
 
     return Decimal("% .6f" % res)
 
+
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 #
 #  ██████  █████  ██       ██████ ██    ██ ██       █████  ████████ ██  ██████  ███    ██
@@ -135,7 +135,7 @@ def cos_two(y):
 # 5:  x = -54°      Y = -36°
 # 6:  X = -18°      Y = -72°
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
-
+getcontext().prec = 16
 
 rotor_rig_bacX_5 = cos_two(54) * radius_of_rotors
 rotor_rig_bacY_5 = cos_two(36) * radius_of_rotors
@@ -154,23 +154,23 @@ rotor_lef_bacY_3 = cos_two(36) * radius_of_rotors
 
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
-
-print("rotor_rig_bacX_5 : ", rotor_rig_bacX_5)
-print("rotor_rig_bacY_5 : ", rotor_rig_bacY_5, "\n")
-
-print("rotor_rig_froX_6 : ", rotor_rig_froX_6)
-print("rotor_rig_froY_6 : ", rotor_rig_froY_6, "\n")
-
-print("rotor_mid_froX_1 : ", rotor_mid_froX_1)
-print("rotor_mid_froY_1 : ", rotor_mid_froY_1, "\n")
-
-print("rotor_lef_froX_2 : ", rotor_lef_froX_2)
-print("rotor_lef_froY_2 : ", rotor_lef_froY_2, "\n")
-
-print("rotor_lef_bacX_3 : ", rotor_lef_bacX_3)
-print("rotor_lef_bacY_3 : ", rotor_lef_bacY_3, "\n")
-
-
+#
+# print("rotor_rig_bacX_5 : ", rotor_rig_bacX_5)
+# print("rotor_rig_bacY_5 : ", rotor_rig_bacY_5, "\n")
+#
+# print("rotor_rig_froX_6 : ", rotor_rig_froX_6)
+# print("rotor_rig_froY_6 : ", rotor_rig_froY_6, "\n")
+#
+# print("rotor_mid_froX_1 : ", rotor_mid_froX_1)
+# print("rotor_mid_froY_1 : ", rotor_mid_froY_1, "\n")
+#
+# print("rotor_lef_froX_2 : ", rotor_lef_froX_2)
+# print("rotor_lef_froY_2 : ", rotor_lef_froY_2, "\n")
+#
+# print("rotor_lef_bacX_3 : ", rotor_lef_bacX_3)
+# print("rotor_lef_bacY_3 : ", rotor_lef_bacY_3, "\n")
+#
+#
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 #
 # ██████   █████  ███████ ██  ██████     ██      ███████ ██    ██ ███████ ██████       █████   ██████ ████████
@@ -210,21 +210,206 @@ lever_act_lef_bacX_3 = basic_lever_act / rotor_lef_bacX_3
 lever_act_lef_bacY_3 = basic_lever_act / rotor_lef_bacY_3
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# print("lever_act_rig_bacX_5 :  ", lever_act_rig_bacX_5)
+# print("lever_act_rig_bacY_5 :  ", lever_act_rig_bacY_5, "\n")
+#
+# print("lever_act_rig_froX_6 :  ", lever_act_rig_froX_6)
+# print("lever_act_rig_froY_6 :  ", lever_act_rig_froY_6, "\n")
+#
+# # print("lever_act_mid_froX_1 :  ", lever_act_mid_froX_1)
+# print("lever_act_mid_froY_1 :  ", lever_act_mid_froY_1, "\n")
+#
+# print("lever_act_lef_froX_2 :  ", lever_act_lef_froX_2)
+# print("lever_act_lef_froY_2 :  ", lever_act_lef_froY_2, "\n")
+#
+# print("lever_act_lef_bacX_3 :  ", lever_act_lef_bacX_3)
+# print("lever_act_lef_bacY_3 :  ", lever_act_lef_bacY_3, "\n")
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# ██████  ███████ ██████   ██████ ███████ ███    ██ ████████
+# ██   ██ ██      ██   ██ ██      ██      ████   ██    ██
+# ██████  █████   ██████  ██      █████   ██ ██  ██    ██
+# ██      ██      ██   ██ ██      ██      ██  ██ ██    ██
+# ██      ███████ ██   ██  ██████ ███████ ██   ████    ██
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+# 90 = 360 / 100 * 25
+# 360 = 90 / 25 * 100
+# 100 = 25 * 360 / 90
+# 25 = 90 / 360 * 100
+#
+# output_value = base_value / 100 * percent
+# base_value = output_value / percent * 100
+# 100 = percent * base_value / output_value
+# percent = output_value / base_value * 100
 
-print("lever_act_rig_bacX_5 :  ", lever_act_rig_bacX_5)
-print("lever_act_rig_bacY_5 :  ", lever_act_rig_bacY_5, "\n")
+percent_rig_bacX_5 = lever_act_rig_bacX_5 / lever_act_mid_froY_1
+percent_rig_bacY_5 = lever_act_rig_bacY_5 / lever_act_mid_froY_1
 
-print("lever_act_rig_froX_6 :  ", lever_act_rig_froX_6)
-print("lever_act_rig_froY_6 :  ", lever_act_rig_froY_6, "\n")
+percent_rig_froX_6 = lever_act_rig_froX_6 / lever_act_mid_froY_1
+percent_rig_froY_6 = lever_act_rig_froY_6 / lever_act_mid_froY_1
 
-# print("lever_act_mid_froX_1 :  ", lever_act_mid_froX_1)
-print("lever_act_mid_froY_1 :  ", lever_act_mid_froY_1, "\n")
+# percent_mid_froX_1 = lever_act_mid_froX_1 / lever_act_mid_froY_1
+percent_mid_froY_1 = lever_act_mid_froY_1 / lever_act_mid_froY_1
 
-print("lever_act_lef_froX_2 :  ", lever_act_lef_froX_2)
-print("lever_act_lef_froY_2 :  ", lever_act_lef_froY_2, "\n")
+percent_lef_froX_2 = lever_act_lef_froX_2 / lever_act_mid_froY_1
+percent_lef_froY_2 = lever_act_lef_froY_2 / lever_act_mid_froY_1
 
-print("lever_act_lef_bacX_3 :  ", lever_act_lef_bacX_3)
-print("lever_act_lef_bacY_3 :  ", lever_act_lef_bacY_3, "\n")
+percent_lef_bacX_3 = lever_act_lef_bacX_3 / lever_act_mid_froY_1
+percent_lef_bacY_3 = lever_act_lef_bacY_3 / lever_act_mid_froY_1
 
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# print("percent_rig_bacX_5 :  ", percent_rig_bacX_5)
+# print("percent_rig_bacY_5 :  ", percent_rig_bacY_5, "\n")
+#
+# print("percent_rig_froX_6 :  ", percent_rig_froX_6)
+# print("percent_rig_froY_6 :  ", percent_rig_froY_6, "\n")
+#
+# # print("percent_mid_froX_1 :  ", percent_mid_froX_1)
+# print("percent_mid_froY_1 :  ", percent_mid_froY_1, "\n")
+#
+# print("percent_lef_froX_2 :  ", percent_lef_froX_2)
+# print("percent_lef_froY_2 :  ", percent_lef_froY_2, "\n")
+#
+# print("percent_lef_bacX_3 :  ", percent_lef_bacX_3)
+# print("percent_lef_bacY_3 :  ", percent_lef_bacY_3, "\n")
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# ████████  ██████      ████████ ██   ██ ███████     ██████  ██  ██████  ██   ██ ████████
+#    ██    ██    ██        ██    ██   ██ ██          ██   ██ ██ ██       ██   ██    ██
+#    ██    ██    ██        ██    ███████ █████       ██████  ██ ██   ███ ███████    ██
+#    ██    ██    ██        ██    ██   ██ ██          ██   ██ ██ ██    ██ ██   ██    ██
+#    ██     ██████         ██    ██   ██ ███████     ██   ██ ██  ██████  ██   ██    ██
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+
+print("to the Right", force_of_rotors, "= 1 = 100%")
+
+# print(lever_act_lef_bacX_3, "3")
+# print(lever_act_lef_froX_2, "2", "\n")
+#
+# print(percent_lef_bacX_3, "3")
+# print(percent_lef_froX_2, "2", "\n")
+#
+# print(percent_lef_bacX_3 * 2, "3")
+# print(percent_lef_froX_2 * 2, "2", "\n")
+
+print(percent_lef_bacX_3 / 2, force_of_rotors * (percent_lef_bacX_3 / 2), "3")
+print(percent_lef_froX_2 / 2, force_of_rotors * (percent_lef_froX_2 / 2), "2", "\n")
+
+sideways_rig_lef_bacX_3 = percent_lef_bacX_3 / 2
+sideways_rig_lef_froX_2 = percent_lef_froX_2 / 2
+
+# print(lever_act_lef_bacX_3 / (percent_lef_bacX_3 * 2), "3")
+# print(lever_act_lef_froX_2 / (percent_lef_froX_2 * 2), "2", "\n")
+
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# ████████  ██████      ████████ ██   ██ ███████     ██      ███████ ███████ ████████
+#    ██    ██    ██        ██    ██   ██ ██          ██      ██      ██         ██
+#    ██    ██    ██        ██    ███████ █████       ██      █████   █████      ██
+#    ██    ██    ██        ██    ██   ██ ██          ██      ██      ██         ██
+#    ██     ██████         ██    ██   ██ ███████     ███████ ███████ ██         ██
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+
+print("to the Left", force_of_rotors, "= 1 = 100%")
+
+# print(lever_act_rig_bacX_5, "5")
+# print(lever_act_rig_froX_6, "6", "\n")
+#
+# print(percent_rig_bacX_5, "5")
+# print(percent_rig_froX_6, "6", "\n")
+#
+# print(percent_rig_bacX_5 * 2, "5")
+# print(percent_rig_froX_6 * 2, "6", "\n")
+
+print(percent_rig_bacX_5 / 2, force_of_rotors * (percent_rig_bacX_5 / 2), "5")
+print(percent_rig_froX_6 / 2, force_of_rotors * (percent_rig_froX_6 / 2), "6", "\n")
+
+sideways_left_rig_bacX_5 = percent_rig_bacX_5 / 2
+sideways_left_rig_froX_6 = percent_rig_froX_6 / 2
+
+# print(lever_act_rig_bacX_5 / (percent_rig_bacX_5 * 2), "5")
+# print(lever_act_rig_froX_6 / (percent_rig_froX_6 * 2), "6", "\n")
+
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# ███████  ██████  ██████  ██     ██  █████  ██████  ██████
+# ██      ██    ██ ██   ██ ██     ██ ██   ██ ██   ██ ██   ██
+# █████   ██    ██ ██████  ██  █  ██ ███████ ██████  ██   ██
+# ██      ██    ██ ██   ██ ██ ███ ██ ██   ██ ██   ██ ██   ██
+# ██       ██████  ██   ██  ███ ███  ██   ██ ██   ██ ██████
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+
+print("Forward", force_of_rotors, "= 1 = 100%")
+
+# print(lever_act_lef_bacY_3, "3")
+# print(lever_act_rig_bacY_5, "5", "\n")
+#
+# print(percent_lef_bacY_3, "3")
+# print(percent_rig_bacY_5, "5", "\n")
+#
+# print(percent_lef_bacY_3 * 2, "3")
+# print(percent_rig_bacY_5 * 2, "5", "\n")
+
+print(percent_lef_bacY_3 / 2, force_of_rotors * (percent_lef_bacY_3 / 2), "3")
+print(percent_rig_bacY_5 / 2, force_of_rotors * (percent_rig_bacY_5 / 2), "5", "\n")
+
+forward_lef_bacY_3 = percent_lef_bacY_3 / 2
+forward_rig_bacY_5 = percent_rig_bacY_5 / 2
+
+# print(lever_act_lef_bacY_3 / (percent_lef_bacY_3 * 2), "3")
+# print(lever_act_rig_bacY_5 / (percent_rig_bacY_5 * 2), "5", "\n")
+
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+#
+# ██████   █████   ██████ ██   ██ ██     ██  █████  ██████  ██████
+# ██   ██ ██   ██ ██      ██  ██  ██     ██ ██   ██ ██   ██ ██   ██
+# ██████  ███████ ██      █████   ██  █  ██ ███████ ██████  ██   ██
+# ██   ██ ██   ██ ██      ██  ██  ██ ███ ██ ██   ██ ██   ██ ██   ██
+# ██████  ██   ██  ██████ ██   ██  ███ ███  ██   ██ ██   ██ ██████
+#
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
+
+print("Backward", force_of_rotors, "= 1 = 100%")
+
+# print(lever_act_lef_froY_2, "2")
+# print(lever_act_mid_froY_1, "1")
+# print(lever_act_rig_froY_6, "6", "\n")
+#
+# print(percent_lef_froY_2, "2")
+# print(percent_mid_froY_1, "1")
+# print(percent_rig_froY_6, "6", "\n")
+#
+# print(percent_lef_froY_2 * 3, "2")
+# print(percent_mid_froY_1 * 3, "1")
+# print(percent_rig_froY_6 * 3, "6", "\n")
+
+print(percent_lef_froY_2 / 3, force_of_rotors * (percent_lef_froY_2 / 3), "2")
+print(percent_mid_froY_1 / 3, force_of_rotors * (percent_mid_froY_1 / 3), "1")
+print(percent_rig_froY_6 / 3, force_of_rotors * (percent_rig_froY_6 / 3), "6", "\n")
+
+backward_lef_froY_2 = percent_lef_froY_2 / 3
+backward_mid_froY_1 = percent_mid_froY_1 / 3
+backward_rig_froY_6 = percent_rig_froY_6 / 3
+
+# print(lever_act_lef_froY_2 / (percent_lef_froY_2 * 3), "2")
+# print(lever_act_mid_froY_1 / (percent_mid_froY_1 * 3), "1")
+# print(lever_act_rig_froY_6 / (percent_rig_froY_6 * 3), "6", "\n")
+#
+# print(lever_act_mid_froY_1 * (percent_lef_froY_2 / 3))
+# print(lever_act_mid_froY_1 * (percent_mid_froY_1 / 3))
+# print(lever_act_mid_froY_1 * (percent_rig_froY_6 / 3), "\n")
+#
+#
+# print(146456 * 500)
+# print(rotor_lef_froY_2 * (lever_act_mid_froY_1 * (percent_lef_froY_2 / 3)))
+# print(rotor_mid_froY_1 * (lever_act_mid_froY_1 * (percent_mid_froY_1 / 3)))
+# print(rotor_rig_froY_6 * (lever_act_mid_froY_1 * (percent_rig_froY_6 / 3)), "\n")
