@@ -210,15 +210,15 @@ def update():
     q2 *= recipNorm
     q3 *= recipNorm
 
-    print(MPU9250_ACC_x,
-          MPU9250_ACC_y,
-          MPU9250_ACC_z,
-          MPU9250_GYR_x,
-          MPU9250_GYR_y,
-          MPU9250_GYR_z,
-          MPU9250_MAG_x,
-          MPU9250_MAG_y,
-          MPU9250_MAG_z)
+    print("ACC_x  :  %.6f" % MPU9250_ACC_x,
+          "ACC_y  :  %.6f" % MPU9250_ACC_y,
+          "ACC_z  :  %.6f" % MPU9250_ACC_z,
+          "GYR_x  :  %.6f" % MPU9250_GYR_x,
+          "GYR_y  :  %.6f" % MPU9250_GYR_y,
+          "GYR_z  :  %.6f" % MPU9250_GYR_z,
+          "MAG_x  :  %.6f" % MPU9250_MAG_x,
+          "MAG_y  :  %.6f" % MPU9250_MAG_y,
+          "MAG_z  :  %.6f" % MPU9250_MAG_z)
 
 
 def updateIMU_MPU9250():
@@ -309,12 +309,12 @@ def updateIMU_MPU9250():
     q2 *= recipNorm
     q3 *= recipNorm
 
-    print(MPU9250_ACC_x,
-          MPU9250_ACC_y,
-          MPU9250_ACC_z,
-          MPU9250_GYR_x,
-          MPU9250_GYR_y,
-          MPU9250_GYR_z)
+    print("ACC_x  :  %.6f" % MPU9250_ACC_x,
+          "ACC_y  :  %.6f" % MPU9250_ACC_y,
+          "ACC_z  :  %.6f" % MPU9250_ACC_z,
+          "GYR_x  :  %.6f" % MPU9250_GYR_x,
+          "GYR_y  :  %.6f" % MPU9250_GYR_y,
+          "GYR_z  :  %.6f" % MPU9250_GYR_z)
 
     # Get Motion of the sensor LSM9DS1
 LSM9DS1_AGM = LSM9DS1.getMotion9()
