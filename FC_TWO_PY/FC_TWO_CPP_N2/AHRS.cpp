@@ -124,7 +124,7 @@ void imuLoop()
     gz *= 180 / PI;
     ahrs.updateIMU(ax, ay, az, gx*0.0175, gy*0.0175, gz*0.0175, dt);
 
-    // Accel + gyro + mag. 
+    // Accel + gyro + mag.
     // Soft and hard iron calibration required for proper function.
     /*
     imu.getMotion9(&ax, &ay, &az, &gx, &gy, &gz, &mx, &my, &mz);
@@ -163,7 +163,7 @@ void imuLoop()
 //=============================================================================
 
 int main(int argc, char *argv[])
-{   
+{
     if (check_apm()) {
         return 1;
     }
