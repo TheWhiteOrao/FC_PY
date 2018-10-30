@@ -4,7 +4,7 @@ from FC_TWO_SEN_N2.lsm9ds1 import *
 from FC_TWO_SEN_N2.util import *
 from socket import *
 from sys import *
-import time as tv
+from time import *
 
 check_apm()
 
@@ -12,7 +12,7 @@ G_SI = 9.80665
 PI = 3.14159
 
 
-def usleep(x): return time.sleep(x / 1000000.0)
+def usleep(x): return sleep(x / 1000000.0)
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 #
@@ -68,7 +68,8 @@ offset = {0: 0, 1: 0, 2: 0}
 
 # dt, maxdt
 mindt = 0.01
-# previoustime, currenttime
+currenttime = 0
+previoustime = 0
 dtsumm = 0
 isFirst = 1
 
@@ -167,6 +168,15 @@ def imuLoop():
     #
     # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 
+    previoustime = currenttime
+    currenttime = time_ns()
+    delta_time = (currenttime - previoustime) / 1000000
+
+    if delta_time < (1 / 1300):
+        usleep((1 / 1300.0 - delta_time) * 1000000)
+
+    currenttime = time_ns()
+    delta_time = (currenttime - previoustime) / 1000000
 
  # Read raw measurements from the MPU and update AHRS
 imuSetup()

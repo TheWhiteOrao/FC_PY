@@ -10,20 +10,22 @@
 from time import *
 
 
-def usleep(x): return time.sleep(x / 1000000.0)
+def usleep(x): return sleep(x / 1000000.0)
 
 
-currenttime = NULL
-previoustime = NULL
+currenttime = 0
+previoustime = 0
 
-for i in range(10000000):
+for i in range(1000):
 
     previoustime = currenttime
     currenttime = time_ns()
-    delta_time = (currenttime, previoustime) / 1000000
+    delta_time = (currenttime - previoustime) / 1000000
 
     if delta_time < (1 / 1300):
         usleep((1 / 1300.0 - delta_time) * 1000000)
 
     currenttime = time_ns()
-    delta_time = (currenttime, previoustime) / 1000000
+    delta_time = (currenttime - previoustime) / 1000000
+
+    print(delta_time)

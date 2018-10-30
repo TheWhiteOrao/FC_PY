@@ -126,10 +126,10 @@ void imuLoop()
 
     // Accel + gyro + mag.
     // Soft and hard iron calibration required for proper function.
-    /*
+    
     imu.getMotion9(&ax, &ay, &az, &gx, &gy, &gz, &mx, &my, &mz);
     ahrs.update(ax, ay, az, gx*0.0175, gy*0.0175, gz*0.0175, my, mx, -mz, dt);
-    */
+    
 
     //------------------------ Read Euler angles ------------------------------
 
