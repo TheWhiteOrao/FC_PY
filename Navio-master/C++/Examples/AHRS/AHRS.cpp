@@ -108,8 +108,8 @@ void imuLoop()
 	currenttime = 1000000 * tv.tv_sec + tv.tv_usec;
 	dt = (currenttime - previoustime) / 1000000.0;
 	if(dt < 1/1300.0) usleep((1/1300.0-dt)*1000000);
-        gettimeofday(&tv,NULL);
-        currenttime = 1000000 * tv.tv_sec + tv.tv_usec;
+  gettimeofday(&tv,NULL);
+  currenttime = 1000000 * tv.tv_sec + tv.tv_usec;
 	dt = (currenttime - previoustime) / 1000000.0;
 
     //-------- Read raw measurements from the MPU and update AHRS --------------
@@ -124,7 +124,7 @@ void imuLoop()
     gz *= 180 / PI;
     ahrs.updateIMU(ax, ay, az, gx*0.0175, gy*0.0175, gz*0.0175, dt);
 
-    // Accel + gyro + mag. 
+    // Accel + gyro + mag.
     // Soft and hard iron calibration required for proper function.
     /*
     imu.getMotion9(&ax, &ay, &az, &gx, &gy, &gz, &mx, &my, &mz);
@@ -163,7 +163,7 @@ void imuLoop()
 //=============================================================================
 
 int main(int argc, char *argv[])
-{   
+{
     if (check_apm()) {
         return 1;
     }
