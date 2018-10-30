@@ -12,7 +12,7 @@ G_SI = 9.80665
 PI = 3.14159
 
 
-usleep = lambda x: time.sleep(x / 1000000.0)
+def usleep(x): return time.sleep(x / 1000000.0)
 
 # ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████
 #
@@ -141,7 +141,7 @@ def imuSetup():
     offset[1] /= 100.0
     offset[2] /= 100.0
 
-    print("Offsets are: {0}, {1}, {2}".format(offset[0], offset[1], offset[2])
+    print("Offsets are: {0}, {1}, {2}".format(offset[0], offset[1], offset[2]))
 
 
 imuSetup()
