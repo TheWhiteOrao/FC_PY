@@ -89,13 +89,13 @@ def CA(direction="", force_of_rotors=10000, radius_of_rotors=500):  # "F","L","R
 
     # returns COS
     if direction == "F":
-        return sideways_left_rig_bacX_5, sideways_left_rig_froX_6
+        return "MOT_3", float(forward_lef_bacY_3), "MOT_5", float(forward_rig_bacY_5)
     elif direction == "B":
-        return backward_lef_froY_2, backward_mid_froY_1, backward_rig_froY_6
-    elif direction == "L":
-        return sideways_left_rig_bacX_5, sideways_left_rig_froX_6
+        return "MOT_2", float(backward_lef_froY_2), "MOT_1", float(backward_mid_froY_1), "MOT_6", float(backward_rig_froY_6)
     elif direction == "R":
-        return sideways_rig_lef_bacX_3, sideways_rig_lef_froX_2
+        return "MOT_5", float(sideways_left_rig_bacX_5), "MOT_6", float(sideways_left_rig_froX_6)
+    elif direction == "L":
+        return "MOT_3", float(sideways_rig_lef_bacX_3), "MOT_2", float(sideways_rig_lef_froX_2)
     else:
         print("not def return, try \"F\" \"L\" \"R\" \"B\" ")
 
@@ -103,3 +103,6 @@ def CA(direction="", force_of_rotors=10000, radius_of_rotors=500):  # "F","L","R
 if __name__ == '__main__':
     pass
     print(CA("F"))
+    print(CA("B"))
+    print(CA("L"))
+    print(CA("R"))
